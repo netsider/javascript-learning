@@ -1,0 +1,29 @@
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+	<article>
+		<div id ="russell" class="russell">
+		<ol>
+		<li><a href="http://www.example.com">a</a></li>
+		<li><a href="http://www.example.com">b</a></li>
+		<li><a href="http://www.example.com">c</a></li>
+		<li><a href="http://www.example.com">d</a></li>
+		</ol>
+		</div>
+		<form>
+		<input type="radio" checked value="yes"/>
+		<input type="checkbox" checked value="yes"/>
+		</form>
+	</article>
+<script>
+var myNode = document.querySelector('.russell li a');
+//console.log(myNode.href); // http://www.example.com
+myNode.href = "http://www.russellrounds.com";
+//console.log(myNode.parentElement.childNodes);
+console.log(myNode.parentElement.childNodes[0]); // <a href="http://www.russellrounds.com">a</a>
+
+var myNodes = document.querySelector("input[type='checkbox']");
+myNodes.vale = false;
+</script>
+</body>
+</html>

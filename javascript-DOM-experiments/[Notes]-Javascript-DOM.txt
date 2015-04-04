@@ -1,0 +1,14 @@
+console.log
+console.dir
+console.info
+console.warn
+console.error
+console.group
+console.groupEnd
+console.time
+
+document.forms can be used to access form elements.
+
+Everything in the DOM is a node.
+
+To create your own named elements in HTML, use "data-" and then the name, and it will still test valid.

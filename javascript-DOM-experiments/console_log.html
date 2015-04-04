@@ -1,0 +1,26 @@
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+<div id ="list">
+<ol>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+<li>d</li>
+</ol>
+</div>
+<script>
+console.time('Loop');
+for (var i = 1000000;i >= 0;i--){
+}
+console.timeEnd("Loop");
+console.assert(document.querySelectorAll('li').length===4,
+	"Sorry, there are not 4 list elements!"
+);
+console.log(document.body);
+var myNode = document.getElementById('list');
+console.dir(myNode);
+console.dir(myNode.childNodes);
+</script>
+</body>
+</html>

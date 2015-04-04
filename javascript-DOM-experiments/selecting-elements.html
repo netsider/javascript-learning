@@ -1,0 +1,32 @@
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+<article>
+<div id ="russell" class="russell">
+<ol>
+<li>a</li>
+<li><a href="http://www.example.com">b</a></li>
+<li>c</li>
+<li>d</li>
+</ol>
+</div>
+<form>
+<input type="radio" />
+<input type="checkbox" />
+</form>
+</article>
+<script>
+// Below are to be used with HTML tags
+console.log(document.getElementById('russell'));
+console.log(document.getElementsByTagName('ol'));
+console.log(document.getElementsByName('ol')); // Only works for forms  See: selecting-form-elements.html
+console.log(document.getElementsByClassName('russell'));
+// Below are to be used with CSS tags
+console.log(document.querySelector('article'));
+console.log(document.querySelector('article').childNodes);
+//console.log(document.querySelectorAll('article ol'));
+console.log(document.querySelectorAll('article>ol'));
+console.log(document.querySelectorAll('input[type=checkbox]'));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<body>
+	<article>
+		<div id ="russell" class="russell">
+		<ol>
+		<li><a href="http://www.example.com">a</a></li>
+		<li><a href="http://www.example.com">b</a></li>
+		<li><a href="http://www.example.com">c</a></li>
+		<li data-li="datali"><a href="http://www.example.com" data-russ="datahref">d</a></li>
+		<li><a href="http://www.example.com"><img src="jquery.gif"></a></li>
+		</ol>
+		</div>
+		<form>
+		<input type="radio" checked value="yes"/>
+		<input type="checkbox" checked value="yes"/>
+		<input type="submit" name="submit">
+		</form>
+	</article>
+<script>
+var myNode = document.querySelector('.russell li a img');
+console.log(myNode);
+myNode.classList.add("Russell");
+console.log(myNode);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<form name="Russell">
+First name:<br>
+<input type="text" name="firstname" />
+<br>
+Last name:<br>
+<input type="text" name="lastname" />
+<input type="radio" name="subscribe" checked value="yes" />
+</form>
+<script>
+console.log(document.forms);
+console.log(document.forms[0]);
+console.log(document.Russell); // Accesses form named "Russell", above.
+console.log(document.Russell.firstname); 
+console.log(document.getElementsByName('subscribe')[0]); 
+//console.log(document.getElementsByName('subscribe')); // Wrong way
+document.getElementsByName('subscribe')[0].checked = false;
+console.log(document.getElementsByName('subscribe')[0].checked); // false
+</script>
+</body>
+</html>
