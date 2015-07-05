@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+<style>
+body, html{
+margin: 0px;
+}
+
+#nav {
+width: 250px;
+height: 115px;
+margin: -100px 0px 0px -webkit-calc(100% - 280px);
+position: absolute;
+background: RGBa(99, 159, 217, 0.1);
+display: block;
+}
+
+#arrow_container {
+width: 250px;
+height: 15px;
+margin: -5px 0px 0px 0px;
+position: absolute;
+cursor: pointer;
+}
+
+#down {
+background: url(http://i.imgur.com/JTxva6m.png) no-repeat 0px -45px;
+}
+
+#button {
+width: 240px;
+margin: 5px;
+cursor: pointer;
+text-decoration: none;
+color: #999999;
+}
+
+#button:hover {
+background: RGBa(99, 159, 217, 0.4);
+}
+
+.scroll {
+height: 20px;
+margin: 0px 5px;
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+font-size: 15px;
+color: #999999;
+text-align: left;
+}
+
+.arrow {
+width: 10px;
+height: 5px;
+margin: 5px 0px 0px -webkit-calc(50% - 5px);
+position: relative;
+}
+</style>
+</head>
+<body>
+<div id="nav">
+<div id="button"><p class="scroll" onclick="location.href='#ed';">Education</p></div>
+<div id="button"><p class="scroll" onclick="location.href='#wxp';">Work Experience</p></div>
+<div id="button"><p class="scroll" onclick="location.href='#oact';">Other Activities</p></div>
+<div id="button"><p class="scroll" onclick="window.open('cv.pdf','mywindow');">View as PDF</p></div>
+<div id="arrow_container"><div class="arrow" id="down"></div></div>
+
+<script>
+$("#arrow_container").click( function(event){
+	event.preventDefault();
+    if ( $(this).hasClass("isDown") ) {
+		$("#nav").stop().animate({marginTop:"-100px"}, 200);	    					
+    } else {
+        $("#nav").stop().animate({marginTop:"0px"}, 200);
+    }
+    $(this).toggleClass("isDown");
+	return false;
+});
+</script>
+</body>
+</html>

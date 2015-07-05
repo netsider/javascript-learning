@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+.heading1{
+font-size: 14px;
+font-weight: bold;
+font-family: arial;
+}
+.heading2{
+font-size: 25px;
+font-weight: bold;
+font-family: arial;
+}
+</style>
+</head>
+<body>
+<div id="box">
+<pre>
+<span class="heading2">Functions</span>
+<br/><span class="heading1">Function Literal (Function Expression):</span>
+var x = function () { // Function Body };
+var z = x(4, 3);
+
+var x = function FunctionName(){
+	// Function Body
+};
+<br/><br/><span class="heading1">Function Statement (Function Declaration)</span>
+function functionname(){
+	//Function Body
+};
+<br/><br/><span class="heading1">Function <i>Constructor</i></span>
+var myFunction = new Function("a", "b", "return a * b");
+
+var x = myFunction(4, 3);
+<br/><br/><span class="heading1">Function (<i>self-invoking</i>)</span>
+(function () {
+    var x = "Hello!!";      // I will invoke myself
+})();
+
+<u>*** Functions defined using an expression are not hoisted (and cannot be called before they're declared).</u>
+<br/><br/><span class="heading2">Objects</span>
+
+<u>In JavaScript, objects use named indexes for it's <b>members</b>.</u>
+<br/><br/><span class="heading1">Object Constructor</span>
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+<br/><br/><span class="heading1">Object Literal</span>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+};
+
+person.lastName;
+person["lastName"];
+<br/><br/><span class="heading1">Objects using the keyword new (not recommended)</span>
+var person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+<br/><br/><span class="heading1">Objects <i><strong>Methods</strong></i></span>
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function(c) {
+       return this.firstName + " " + this.lastName;
+    }
+};
+
+person.fullName()
+<br/><span class="heading2">Other</span>
+<br/><span class="heading1">Promises</span>
+var promise = new Promise(function(resolve, reject) {
+  // do a thing, possibly async, then…
+
+  if (/* everything turned out fine */) {
+    resolve("Stuff worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
+});
+<br/><span class="heading1">Arrays</span>
+<u>In JavaScript, arrays use numbered indexes only.</u>
+
+var array = [1, "Two", True];
+
+var array = new Array(1, "Two", True);
+
+var cars = [
+    "Saab",
+    "Volvo",
+    "BMW"
+];
+<br/><br/><span class="heading1">Variables</span>
+var x = "Russ";
+var x = 10;
+var x = true;
+<br/><br/><span class="heading1">Callback Functions</span>
+​var allUserData = [];
+​
+​function printFunction (userData) {
+    if ( typeof userData === "string")
+    {
+        console.log(userData);
+    }
+    else if ( typeof userData === "object")
+    {
+        for (var item in userData) {
+            console.log(item + ": " + userData[item]);
+        }
+​
+    }
+​
+}
+​
+​function callFunction (options, callback) {
+    allUserData.push (options);
+    callback (options);
+​
+}
+​
+//Call the function, and pass in the "printFunction" function as a parameter
+callFunction ({name:"Russ", speciality:"Student"}, printFunction);
+
+<br/><br/><span class="heading1">Prototype</span>
+</pre>
+</div>
+</body>
+</html>
