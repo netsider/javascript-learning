@@ -120,17 +120,6 @@ PrintStuff.prototype.print = function () {
 ​// newObj inherits print() from PrintStuff function. newObj can call print directly.​
 newObj.print ();
 <br/><span class="heading2">Other</span>
-<br/><span class="heading1">Promises</span>
-var promise = new Promise(function(resolve, reject) {
-  // do a thing, possibly async, then…
-
-  if (/* everything turned out fine */) {
-    resolve("Stuff worked!");
-  }
-  else {
-    reject(Error("It broke"));
-  }
-});
 <br/><span class="heading1">Arrays</span>
 <u>In JavaScript, arrays use numbered indexes only.</u>
 
@@ -147,6 +136,52 @@ var cars = [
 var x = "Russ";
 var x = 10;
 var x = true;
+<br/><span class="heading1">Promises</span>
+<u>A promise represents the result of an asynchronous operation.</u>
+
+var promise = new Promise(function(resolve, reject) {  //takes one parameter: a callback with two parameters.
+	// Function Body
+  if (true) {
+    resolve("Stuff worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
+});
+
+promise.then(function(result) { // takes two arguments, a callback for a success case, and another for the failure case.  Both optional.
+  console.log(result); // "Stuff worked!"
+}, function(err) {
+  console.log(err); // Error: "It broke"
+});
+
+Promises with AJax:
+function get(url) {
+  return new Promise(function(resolve, reject) {
+    var req = new XMLHttpRequest();
+    req.open('GET', url);
+
+    req.onload = function() {
+      if (req.status == 200) {
+        resolve(req.response); // Resolve the promise with the response text
+      }
+      else {
+        reject(Error(req.statusText)); // Reject on error
+      }
+    };
+    req.onerror = function() {
+      reject(Error("Network Error"));
+    };
+    req.send();
+  });
+}
+
+//Use it
+get('story.json').then(function(response) {
+  console.log("Success!", response);
+}, function(error) {
+  console.error("Failed!", error);
+});
 </pre>
 </div>
 </body>
