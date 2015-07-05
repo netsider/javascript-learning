@@ -41,6 +41,27 @@ var x = myFunction(4, 3);
 })();
 
 <u>*** Functions defined using an expression are not hoisted (and cannot be called before they're declared).</u>
+<br/><br/><span class="heading1">Callback Function</span>
+​var allUserData = [];
+​
+function printFunction (userData) {
+    if ( typeof userData === "string")
+    {
+        console.log(userData);
+    }else if ( typeof userData === "object"){
+        for(var item in userData){
+            console.log(item + ": " + userData[item]);
+        }
+    }
+}
+​
+​function callFunction (options, callback) {
+    allUserData.push (options);
+    callback (options);
+​
+}
+​
+callFunction ({name:"Russ", speciality:"Student"}, printFunction);
 <br/><br/><span class="heading2">Objects</span>
 
 <u>In JavaScript, objects use named indexes for it's <b>members</b>.</u>
@@ -82,6 +103,22 @@ var person = {
 };
 
 person.fullName()
+<br/><br/><span class="heading2">Prototype</span>
+<br/><span class="heading1"></span>
+function PrintStuff (myDocuments) {
+​	this.documents = myDocuments;
+}
+​
+​// We add the print () method to PrintStuff prototype property so other instances of objects can inherit it:​
+PrintStuff.prototype.print = function () {
+	console.log(this.documents);
+}
+​
+​// Create a new object with the PrintStuff () constructor
+​var newObj = new PrintStuff ("I am a new Object.");
+​
+​// newObj inherits print() from PrintStuff function. newObj can call print directly.​
+newObj.print ();
 <br/><span class="heading2">Other</span>
 <br/><span class="heading1">Promises</span>
 var promise = new Promise(function(resolve, reject) {
@@ -110,33 +147,6 @@ var cars = [
 var x = "Russ";
 var x = 10;
 var x = true;
-<br/><br/><span class="heading1">Callback Functions</span>
-​var allUserData = [];
-​
-​function printFunction (userData) {
-    if ( typeof userData === "string")
-    {
-        console.log(userData);
-    }
-    else if ( typeof userData === "object")
-    {
-        for (var item in userData) {
-            console.log(item + ": " + userData[item]);
-        }
-​
-    }
-​
-}
-​
-​function callFunction (options, callback) {
-    allUserData.push (options);
-    callback (options);
-​
-}
-​
-callFunction ({name:"Russ", speciality:"Student"}, printFunction);
-
-<br/><br/><span class="heading1">Prototype</span>
 </pre>
 </div>
 </body>
