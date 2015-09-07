@@ -4,8 +4,11 @@ var init = function() {
       panelClassName = 'show-front',
 
       onButtonClick = function( event ){
+		  console.log("panelClassName: " + panelClassName);
         box.removeClassName( panelClassName );
         panelClassName = event.target.className;
+		console.log("JSON: " + JSON.stringify(event.target.className));
+		console.log("panelClassName: " + panelClassName);
         box.addClassName( panelClassName );
       };
 
